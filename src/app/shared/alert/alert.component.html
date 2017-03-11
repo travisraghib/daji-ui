@@ -1,0 +1,12 @@
+<div
+    *ngIf="isShowing"
+    [@drop]="isShowing"
+    class="alert text-center"
+    [ngClass]="alert.type"
+    role="alert">
+    <button (click)="isShowing = false"type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>{{alert?.header}}</strong>
+    {{alert?.message}}
+</div>

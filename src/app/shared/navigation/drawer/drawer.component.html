@@ -1,0 +1,7 @@
+<div *ngIf="isShowing" [@slideToRight]="isShowing" class="col-10 col-sm-8 col-md-7 col-lg-5 col-xl-4 drawer-container">
+    <!--<app-search-bar (update)="onUpdateSearch($event)"> </app-search-bar>-->
+    <!--<hr>-->
+    <!--<app-current-search [userLocation]="location" (geolocate)="onGeolocate()"></app-current-search>-->
+</div>
+<!--white bg-->
+<div *ngIf="isShowing" [@halfFade]="isShowing" (click)="handleClose()" class="col drawer-bg"></div>
