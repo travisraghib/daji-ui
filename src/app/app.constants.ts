@@ -87,6 +87,14 @@ export const AUTH_ERROR_ALERT = {
   durration : 3000
 }
 
+export const UPLOAD_ERROR_ALERT = {
+  type      : 'alert-danger',
+  header    : 'Something Went wrong: ',
+  message   : 'Please try again.',
+  durration : 3000
+}
+
+
 export const FIREBASE_CONFIG = {
   apiKey            : "AIzaSyDAGJwDy6oJey8kYwCcuyBxntw3kJRx2CE",
   authDomain        : "daji-dev.firebaseapp.com",
@@ -99,7 +107,7 @@ export let CROPPER_OPTIONS = {
   preview                  : '.img-preview',
   viewMode                 : 5,
   aspectRatio              : 1,
-  autoCropArea             : 0.65,
+  autoCropArea             : 1,
   dragMode                 : 'move',
   restore                  : false,
   modal                    : false,
@@ -108,25 +116,7 @@ export let CROPPER_OPTIONS = {
   cropBoxMovable           : true,
   cropBoxResizable         : true,
   toggleDragModeOnDblclick : false,
-  zoomable                 : false,
-  ready                    : function (e) {
-    console.log(e.type);
-  },
-  cropstart                : function (e) {
-    console.log(e.type, e.detail.action);
-  },
-  cropmove                 : function (e) {
-    console.log(e.type, e.detail.action);
-  },
-  cropend                  : function (e) {
-    console.log(e.type, e.detail.action);
-  },
-  crop                     : function (e) {
-    var data = e.detail;
-  },
-  zoom                     : function (e) {
-    console.log(e.type, e.detail.ratio);
-  }
+  zoomable                 : false
 };
 
 

@@ -1,22 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MaterialModule } from '@angular/material';
+
 import { NavigationComponent } from './navigation/navigation.component';
 import { DrawerComponent } from './navigation/drawer/drawer.component';
 import { AlertComponent } from './alert/alert.component';
+import { ProfilePhotoUploadComponent } from './profile-photo-upload/profile-photo-upload.component';
+import { ProfileUserUploadComponent } from './profile-user-upload/profile-user-upload.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
   ],
   declarations: [
     NavigationComponent,
     DrawerComponent,
-    AlertComponent
+    AlertComponent,
+    ProfilePhotoUploadComponent,
+    ProfileUserUploadComponent
   ],
   exports: [
     NavigationComponent,
     DrawerComponent,
-    AlertComponent
+    AlertComponent,
+    ProfilePhotoUploadComponent,
+    ProfileUserUploadComponent
   ]
 })
 export class SharedModule { }

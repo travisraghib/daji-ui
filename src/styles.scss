@@ -1,3 +1,13 @@
+@import '~@angular/material/core/theming/all-theme';
+@include mat-core();
+$dark-primary: mat-palette($mat-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+@include angular-material-theme($dark-theme);
+$border-radius: 0px;
+
+
 .card {
   margin: 10px 0 0 0;
   width: calc(100%);
@@ -19,6 +29,8 @@
     font-size:0.8rem;
   }
 }
-body{
-  background:#f0f0f0;
+html, body, material-app, md-sidenav-container, .my-content {
+  margin: 0;
+  width: 100%;
+  height: 100%;
 }

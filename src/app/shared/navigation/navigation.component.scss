@@ -1,18 +1,11 @@
-img{
-  height:20px;
+.spacer {
+  flex-grow:1;
 }
-.navbar-toggler{
-  border:none;
-  padding:0;
+.nav-menu{
+  min-width:auto!important;
+  padding:0!important;
 }
-.navbar-toggler-icon{
-  width:0.5em;
-  height:0.5em;
-  padding:0;
-}
-
-.navbar{
-  margin:0;
-  position:relative;
-  color:white;
+.mat-toolbar-row, .mat-toolbar{
+  height:48px!important;
+  min-height:48px!important;
 }

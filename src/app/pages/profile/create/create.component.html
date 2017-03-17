@@ -1,22 +1,12 @@
-<div class="container">
-    <div class="card" [hidden]="!selectedImage">
-        <h3>Crop your photo</h3>
-        <div class="crop-image-container">
-            <img class="image-fluid crop-image" alt="" src="assets/images/dummy_avatar.png" #imgRef>
+<md-card>
+    <md-card-header>Get started with your profile</md-card-header>
+    <md-card-content>
+        <div class="alert alert-danger">
+            <p class="h4">No profile created yet</p>
+            <a class="alert-link" [routerLink]="['/profile/create/photo']">Create your profile</a>
         </div>
-        <div class="img-preview preview-lg" [hidden]="!showCroppedImage"></div>
-
-        <button (click)="cropImage()" class="btn btn-primary">crop</button>
-    </div>
-    <div class="row" *ngIf="!selectedImage">
-        <div class="col">
-            <div class="card">
-                <h3>Select Image</h3>
-                <div class="image-upload-container">
-                </div>
-                <input (change)="handleImageSelect($event, imgRef)" class="image-upload-input" type="file"/>
-                <img class="img-fluid" src="assets/images/dummy_avatar.png" alt="">
-            </div>
+        <div class="alert alert-warning">
+            <p>Find some friends</p>
         </div>
-    </div>
-</div>
+    </md-card-content>
+</md-card>

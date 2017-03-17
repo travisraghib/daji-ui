@@ -1,24 +1,14 @@
 <!--alert container-->
 <app-alert></app-alert>
 <!--main nav-->
-<nav class="navbar navbar-inverse bg-inverse">
-  <div class="row justify-content-md-center">
-    <div class="col col-xs-1">
-      <button (click)="handleDrawerToggle()"class="navbar-toggler navbar-toggler-left" type="button" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-    <div class="col col-xs-auto text-center">
-        daji
-    </div>
-    <div class="col col-xs-1 text-right">
-      <button (click)="handleDrawerToggle()"class="navbar-toggler navbar-toggler-right" type="button" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-
-
-</nav>
+{{isShowing}}
+<md-toolbar color="primary" [hidden]="hide">
+  <button md-button (click)="handleToggle()" class="nav-menu">
+    <md-icon>menu</md-icon>
+  </button>
+  <div class="spacer"></div>
+  <span>daji</span>
+  <div class="spacer"></div>
+</md-toolbar>
 <!--drawer nav-->
-<app-drawer (close)="handleDrawerClose()" [isShowing]="isShowing"></app-drawer>
+<!--<app-drawer (close)="handleDrawerClose()" [isShowing]="isShowing"></app-drawer>-->

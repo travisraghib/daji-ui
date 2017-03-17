@@ -1,26 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation} from '@angular/core';
+
+import { NavService } from '../../service/nav/nav.service';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.scss']
+  styleUrls: ['./navigation.component.scss'],
+  encapsulation: ViewEncapsulation.None
+  
 })
 export class NavigationComponent implements OnInit {
-  private isShowing: boolean = false;
+  @Output() toggle : EventEmitter<null> = new EventEmitter<null>();
+  private hide = false;
   
-  constructor() { }
+  constructor(
+    private navService : NavService
+  ) {
+    this.navService.hiding.subscribe(isHiding => this.hide = isHiding);
+  }
 
   ngOnInit() {
     this.setupScrollSpy();
   }
-  
-  handleDrawerToggle(){
-    this.isShowing = !this.isShowing;
+  handleToggle(){
+    this.toggle.emit();
   }
   
-  handleDrawerClose(){
-    this.isShowing = false;
-  }
   
   setupScrollSpy(){
     // window.addEventListener('scroll', (event)=>{

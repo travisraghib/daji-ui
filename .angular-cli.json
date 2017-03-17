@@ -20,6 +20,7 @@
       "prefix": "app",
       "styles": [
         "../node_modules/cropperjs/dist/cropper.css",
+        "../node_modules/bootstrap/scss/bootstrap.scss",
         "styles.scss"
       ],
       "scripts": [

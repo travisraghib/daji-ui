@@ -2,7 +2,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/toPromise';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { SessionStorageService } from './session-storage.service';
@@ -12,7 +11,6 @@ import { LOADING_ALERT, AUTH_ERROR_ALERT, USER_API } from '../../app.constants';
 
 @Injectable()
 export class UserDataService {
-  private authState : BehaviorSubject<boolean> = new BehaviorSubject(false);
   private auth;
   
   public user;
@@ -26,40 +24,51 @@ export class UserDataService {
     private sessionStorageService : SessionStorageService,
     private alertService : AlertService
   ) {
-    this.firebaseService.user.subscribe((user) => this.user = user);
     this.auth = this.firebaseService.auth;
+    this.firebaseService.user.subscribe(user => {
+      this.user = user
+      if(!user) this.sessionStorageService.set('user', user);
+    });
+  }
   
-    // this.firebaseService.auth.currentUser.getToken(true)
-    //     .then((idToken) => console.log(idToken))
-    //     .catch((error) => console.log(error));
+  get userResolve () {
+    return this.sessionStorageService.get('user');
   }
   
   login (email : string, password : string) {
     this.alertService.alert.next(LOADING_ALERT)
     return this.auth
                .signInWithEmailAndPassword(email, password)
-               .then(res => this.handleAuth(res))
+               .then(res => this.handleLogin(res))
+               .then(res => this.sessionStorageService.set('user', res.json()))
                .catch(err => this.handleAuthError(err));
   }
   
   signUp (email : string, password : string) {
-    // this.handleSignUp({email, password})
+    this.alertService.alert.next(LOADING_ALERT)
     return this.auth.createUserWithEmailAndPassword(email, password)
-               .then(res => this.handleSignUp(res))
-               .catch(err => this.handleAuthError(err));
+               .then(this.handleSignUp.call(this, password))
+               .catch(this.handleAuthError.bind(this));
   }
   
-  handleSignUp (res) {
-    this.http.post(USER_API, res)
-        .toPromise()
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+  handleSignUp (password) {
+    return (res) => {
+      this.alertService.dismiss.next({})
+      return this.firebaseService.token
+                 .then(idToken => this.http.post(USER_API, { password, idToken }).toPromise())
+                 .then(res => this.sessionStorageService.set('user', res.json()))
+                 .catch(this.handleAuthError.bind(this));
+    }
   }
   
-  handleAuth (res) {
+  handleLogin (res) {
     this.alertService.dismiss.next({})
-    this.user = res;
-    return res;
+    return this.firebaseService.token
+               .then(idToken => {
+                 return this.http
+                            .post(`${USER_API}/auth`, { idToken })
+                            .toPromise()
+               });
   }
   
   handleAuthError (error) {
@@ -68,4 +77,12 @@ export class UserDataService {
     return Promise.reject(error);
   }
   
+  handleProfileUpload (url) {
+    return this.firebaseService.token
+               .then(idToken => {
+                 return this.http
+                            .post(`${USER_API}/profile/image`, { idToken, url })
+                            .toPromise()
+               });
+  }
 }

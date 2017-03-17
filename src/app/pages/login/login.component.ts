@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
   
   handleSignIn(email : string, password: string){
-    console.log(email)
-    console.log(password)
     this.userDataService.login(email, password)
       .then(user => this.router.navigate(['/profile']))
       .catch(err => console.log(err))

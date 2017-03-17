@@ -1,2 +1,5 @@
-<app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<md-sidenav-container>
+    <md-sidenav mode="over" #sidenav>Drawer content</md-sidenav>
+    <app-navigation (toggle)="sidenav.toggle()"></app-navigation>
+    <router-outlet></router-outlet>
+</md-sidenav-container>

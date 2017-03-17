@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-
-import { UserDataService } from '../../service/user/user-data.service'
+import { Router } from '@angular/router';
+import { UserDataService } from '../../service/user/user-data.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  selector    : 'app-signup',
+  templateUrl : './signup.component.html',
+  styleUrls   : [ './signup.component.scss' ]
 })
 export class SignupComponent implements OnInit {
-
-  constructor(
-    private userDataService : UserDataService
-  ) { }
-
-  ngOnInit() {}
   
-  handleSignUp(email : string, password: string){
-    console.log(email)
-    console.log(password)
-    this.userDataService.signUp(email, password);
+  constructor (
+    private userDataService : UserDataService,
+    private router: Router,
+  ) { }
+  
+  ngOnInit () {}
+  
+  handleSignUp (email : string, password : string) {
+    this.userDataService.signUp(email, password)
+        .then( _ => this.router.navigate([ '/profile' ]))
   }
-
+  
 }
