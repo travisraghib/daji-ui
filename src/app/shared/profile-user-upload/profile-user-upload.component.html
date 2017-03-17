@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse bg-inverse" *ngIf="!hide">
+    <div class="row justify-content-md-center">
+        <div class="col">
+            <button md-button (click)="back()" *ngIf="!selectedImage">
+                <i class="material-icons">keyboard_arrow_left</i>Back
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="page">
+    <md-card>
+        <md-card-header>
+            <md-card-title>User Profile</md-card-title>
+        </md-card-header>
+        <md-card-content>
+            <md-list>
+                <md-list-item>
+                    <md-select name="gender" placeholder="I am a">
+                        <md-option [value]="type" *ngFor="let gender of genders"> {{gender}}</md-option>
+                    </md-select>
+                </md-list-item>
+                <md-list-item>
+                    <md-select name="accountType">
+                        <md-option [value]="type" *ngFor="let type of accountTypes;">{{ type }}</md-option>
+                    </md-select>
+                </md-list-item>
+                <md-list-item>
+                    I am seeking:
+                </md-list-item>
+                <md-list-item *ngFor="let gender of seekingGenders">
+                    <md-checkbox>{{gender}}</md-checkbox>
+                </md-list-item>
+
+            </md-list>
+
+
+        </md-card-content>
+    </md-card>
+</div>
