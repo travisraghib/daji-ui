@@ -8,6 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { CreateComponent } from './pages/profile/create/create.component';
 import { PhotoComponent } from './pages/profile/create/photo/photo.component';
 import { UserComponent } from './pages/profile/create/user/user.component';
+import { AboutComponent } from './pages/profile/create/about/about.component';
 
 export const appRoutes : Routes = [
   {
@@ -47,7 +48,12 @@ export const appRoutes : Routes = [
           {
             path : 'user',
             component : UserComponent
+          },
+          {
+            path : 'about',
+            component : AboutComponent
           }
+          
         ]
       },
     ]

@@ -35,6 +35,7 @@ import { CreateComponent } from './pages/profile/create/create.component';
 import 'hammerjs';
 import { PhotoComponent } from './pages/profile/create/photo/photo.component';
 import { UserComponent } from './pages/profile/create/user/user.component';
+import { AboutComponent } from './pages/profile/create/about/about.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { UserComponent } from './pages/profile/create/user/user.component';
     CreateComponent,
     PhotoComponent,
     UserComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

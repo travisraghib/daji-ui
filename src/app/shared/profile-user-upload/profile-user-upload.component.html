@@ -5,6 +5,10 @@
                 <i class="material-icons">keyboard_arrow_left</i>Back
             </button>
         </div>
+        <div class="col text-center">
+            <button md-mini-fab (click)="handleUploadImage()">next</button>
+        </div>
+
     </div>
 </nav>
 
@@ -16,12 +20,12 @@
         <md-card-content>
             <md-list>
                 <md-list-item>
-                    <md-select name="gender" placeholder="I am a">
-                        <md-option [value]="type" *ngFor="let gender of genders"> {{gender}}</md-option>
+                    <md-select name="gender" placeholder="I am a" (change)="handleUserGenderSelect($event)">
+                        <md-option [value]="gender" *ngFor="let gender of genders"> {{gender}}</md-option>
                     </md-select>
                 </md-list-item>
                 <md-list-item>
-                    <md-select name="accountType">
+                    <md-select name="accountType" placeholder="I want to" (change)="handleProfileTypeSelect($event)">
                         <md-option [value]="type" *ngFor="let type of accountTypes;">{{ type }}</md-option>
                     </md-select>
                 </md-list-item>
@@ -29,12 +33,9 @@
                     I am seeking:
                 </md-list-item>
                 <md-list-item *ngFor="let gender of seekingGenders">
-                    <md-checkbox>{{gender}}</md-checkbox>
+                    <md-checkbox (change)="handleSeekingGenderSelect(gender, $event)">{{gender}}</md-checkbox>
                 </md-list-item>
-
             </md-list>
-
-
         </md-card-content>
     </md-card>
 </div>

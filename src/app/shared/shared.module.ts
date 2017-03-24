@@ -7,6 +7,7 @@ import { DrawerComponent } from './navigation/drawer/drawer.component';
 import { AlertComponent } from './alert/alert.component';
 import { ProfilePhotoUploadComponent } from './profile-photo-upload/profile-photo-upload.component';
 import { ProfileUserUploadComponent } from './profile-user-upload/profile-user-upload.component';
+import { ProfileAboutUploadComponent } from './profile-about-upload/profile-about-upload.component';
 
 @NgModule({
   imports: [
@@ -18,14 +19,16 @@ import { ProfileUserUploadComponent } from './profile-user-upload/profile-user-u
     DrawerComponent,
     AlertComponent,
     ProfilePhotoUploadComponent,
-    ProfileUserUploadComponent
+    ProfileUserUploadComponent,
+    ProfileAboutUploadComponent
   ],
   exports: [
     NavigationComponent,
     DrawerComponent,
     AlertComponent,
     ProfilePhotoUploadComponent,
-    ProfileUserUploadComponent
+    ProfileUserUploadComponent,
+    ProfileAboutUploadComponent
   ]
 })
 export class SharedModule { }
