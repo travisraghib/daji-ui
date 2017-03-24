@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '@angular/material';
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate/ng2-translate';
+import { Http } from '@angular/http';
 
 //modules
 import { SharedModule } from './shared/shared.module'
@@ -36,6 +38,13 @@ import 'hammerjs';
 import { PhotoComponent } from './pages/profile/create/photo/photo.component';
 import { UserComponent } from './pages/profile/create/user/user.component';
 
+
+
+
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +57,9 @@ import { UserComponent } from './pages/profile/create/user/user.component';
     PhotoComponent,
     UserComponent,
   ],
+  exports: [
+      TranslateModule
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -55,6 +67,11 @@ import { UserComponent } from './pages/profile/create/user/user.component';
     RouterModule.forRoot(appRoutes),
     SharedModule,
     MaterialModule,
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+    })
   ],
   providers: [
     StateManagerService,

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
 
 import { NavigationComponent } from './navigation/navigation.component';
 import { DrawerComponent } from './navigation/drawer/drawer.component';
@@ -12,6 +13,7 @@ import { ProfileUserUploadComponent } from './profile-user-upload/profile-user-u
   imports: [
     CommonModule,
     MaterialModule,
+    TranslateModule
   ],
   declarations: [
     NavigationComponent,
