@@ -59,9 +59,6 @@ export function createTranslateLoader(http: Http) {
     UserComponent,
     AboutComponent,
   ],
-  exports: [
-      TranslateModule
-  ],
   imports: [
     BrowserModule,
     FormsModule,
