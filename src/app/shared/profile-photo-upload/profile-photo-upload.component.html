@@ -2,20 +2,21 @@
     <div class="row justify-content-md-center">
         <div class="col">
             <button md-button (click)="back()" *ngIf="!selectedImage">
-                <i class="material-icons">keyboard_arrow_left</i>Back
+                <i class="material-icons">keyboard_arrow_left</i>
+                {{ 'BACK_BUTTON_TEXT' | translate }}
             </button>
             <div class="row controls" [hidden]="!selectedImage">
                 <div class="col text-center" [hidden]="croppedImage">
-                    <button md-mini-fab (click)="handleCancelImageSelect(imgRef)" color="warn"><md-icon>delete</md-icon></button>
+                    <button md-mini-fab (click)="handleCancelImageSelect(imgRef)" color="warn"><md-icon>{{ 'DELETE_BUTTON' | translate}}</md-icon></button>
                 </div>
                 <div class="col text-center" [hidden]="croppedImage">
-                    <button md-mini-fab (click)="handleCropImage(imgRef)"><md-icon>check</md-icon></button>
+                    <button md-mini-fab (click)="handleCropImage(imgRef)"><md-icon>{{ 'CHECK_BUTTON' | translate }}</md-icon></button>
                 </div>
                 <div class="col text-center" [hidden]="!croppedImage">
-                    <button md-mini-fab (click)="handleCancelCrop(imgRef)" color="warn"><md-icon>close</md-icon></button>
+                    <button md-mini-fab (click)="handleCancelCrop(imgRef)" color="warn"><md-icon>{{ 'CLOSE_BUTTON' | translate }}</md-icon></button>
                 </div>
                 <div class="col text-center" [hidden]="!croppedImage">
-                    <button md-mini-fab (click)="handleUploadImage()"><md-icon>cloud_upload</md-icon></button>
+                    <button md-mini-fab (click)="handleUploadImage()"><md-icon>{{ 'CLOUD_UPLOAD_BUTTON' | translate }}</md-icon></button>
                 </div>
             </div>
         </div>
@@ -24,7 +25,7 @@
 <div class="page">
     <md-card [hidden]="!selectedImage">
         <md-card-header>
-            <md-card-title>Crop your photo</md-card-title>
+            <md-card-title>{{ 'CROP_YOUR_PHOTO' | translate }}</md-card-title>
         </md-card-header>
         <md-card-content>
             <div class="crop-image-container">
@@ -37,7 +38,7 @@
 
     <md-card *ngIf="!selectedImage">
         <md-card-header>
-            <md-card-title>Upload a profile picture</md-card-title>
+            <md-card-title>{{ 'UPLOAD_PROFILE_PICTURE' | translate }}</md-card-title>
         </md-card-header>
         <input (change)="handleImageSelect($event, imgRef)" class="image-upload-input" type="file"/>
         <img class="md-card-image" src="assets/images/dummy_avatar.png" alt="">

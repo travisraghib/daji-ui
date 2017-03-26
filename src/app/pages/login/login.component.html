@@ -1,20 +1,20 @@
 <md-card>
     <md-card-header>
-        <md-card-title>Login</md-card-title>
+        <md-card-title>{{'LOGIN_TITLE' | translate }}</md-card-title>
     </md-card-header>
     <form (ngSubmit)="handleSignIn(email.value, password.value)">
         <md-card-content>
             <div class="form-group">
-                <label>Email address</label>
-                <input #email type="email" class="form-control" id="email" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label>{{'EMAIL_ADDRESS' | translate }}</label>
+                <input #email type="email" class="form-control" id="email" placeholder="{{ 'EMAIL_PLACEHOLDER' | translate }}">
+                <small id="emailHelp" class="form-text text-muted">{{'LOGIN_PRIVACY' | translate }}</small>
             </div>
             <div class="form-group">
-                <label>Password</label>
-                <input #password type="password" class="form-control" placeholder="Password">
+                <label>{{'PASSWORD' | translate }}</label>
+                <input #password type="password" class="form-control" placeholder="{{ 'PASSWORD_PLACEHOLDER' | translate }}">
             </div>
             <div class="text-right">
-                <button type="submit" md-raised-button color="accent">login</button>
+                <button type="submit" md-raised-button color="accent">{{ 'LOGIN_BUTTON' | translate }}</button>
             </div>
         </md-card-content>
     </form>

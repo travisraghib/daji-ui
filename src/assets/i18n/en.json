@@ -1,0 +1,181 @@
+{
+  "APP_TITLE" : "Daji",
+  "BACK_BUTTON_TEXT" : "Back",
+
+  "NAME": "Name",
+  "EMAIL": "Email",
+  "EMAIL_ADDRESS": "Email address",
+  "EMAIL_PLACEHOLDER": "Enter email",
+  "USERNAME": "Username",
+  "PASSWORD": "Password",
+  "PASSWORD_PLACEHOLDER": "Enter password",
+  "MENU" : "menu",
+
+  "MEN" : "Men",
+  "WOMEN" : "Women",
+  "TRANSGENDERS" : "Transgenders",
+  "MAN" : "Man",
+  "WOMAN" : "Woman",
+  "TRANSGENDER" : "Transgender",
+
+  "ACCOUNT_TYPE_LABEL": "I would like to",
+  "DADDY": "Provide for a Baby",
+  "BABY": "Be Provided for by a Daddy",
+
+  "CROP_YOUR_PHOTO" : "Crop your photo",
+
+  "TAB1_TITLE": "Items",
+  "TAB2_TITLE": "Search",
+  "TAB3_TITLE": "Settings",
+
+  "MAP_TITLE": "Map",
+
+  "WELCOME_INTRO" : "The starting point for your next great Ionic app",
+
+  "SETTINGS_TITLE": "Settings",
+  "SETTINGS_OPTION1": "Option 1",
+  "SETTINGS_OPTION2": "Option 2",
+  "SETTINGS_OPTION3": "Option 3",
+  "SETTINGS_OPTION4": "Option 4",
+
+  "SETTINGS_PROFILE_BUTTON" : "Edit Profile",
+
+  "SETTINGS_PAGE_PROFILE": "Edit Profile",
+
+  "WELCOME_TITLE": "Welcome",
+
+  "LOGIN_TITLE": "Login",
+  "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
+  "LOGIN_BUTTON": "login",
+  "LOGIN_PRIVACY": "We'll never share your email with anyone else.",
+  "SIGNUP_TITLE": "Signup",
+  "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
+  "SIGNUP_BUTTON": "Signup",
+
+  "LIST_MASTER_TITLE": "Items",
+
+  "JANUARY_OPTION": "January",
+  "FEBRUARY_OPTION": "February",
+  "MARCH_OPTION": "March",
+  "APRIL_OPTION": "April",
+  "MAY_OPTION": "May",
+  "JUNE_OPTION": "June",
+  "JULY_OPTION": "July",
+  "AUGUST_OPTION": "August",
+  "SEPTEMBER_OPTION": "September",
+  "OCTOBER_OPTION": "October",
+  "NOVEMBER_OPTION": "November",
+  "DECEMBER_OPTION": "December",
+
+  "USER_PROFILE" : "User Profile",
+  "USER_CREATE_TITLE": "Register",
+  "USER_CREATE_CHOOSE_IMAGE": "Add Image",
+
+  "USER_NAME_LABEL" : "User Name",
+  "USER_AGE_LABEL": "Age",
+  "USER_ABOUT_PLACEHOLDER" : "About",
+  "USER_LOCATION_LABEL": "Location",
+  "USER_LOCATION_BUTTON": "set your location",
+  "USER_DOB_LABEL": "Birthday",
+
+  "USER_GENDER_LABEL": "I am a",
+
+  "USER_SEEKING_LABEL": "I am seeking:",
+
+  "USER_LIFESTYLE_BUDGET_LABEL": "Life Style Budget",
+  "USER_NEGOTIABLE_OPTION": "Negotiable",
+  "USER_MINIMAL_OPTION": "Minimal",
+  "USER_PRACTICAL_OPTION": "Practical",
+  "USER_MODERATE_OPTION": "Moderate",
+  "USER_SUBSTANTIAL_OPTION": "Substantial",
+  "USER_HIGH_OPTION": "High",
+
+  "USER_ETHNICITY_LABEL": "Ethnicity",
+  "USER_ASIAN_OPTION": "Asian",
+  "USER_BLACK_AFRICAN_DESCENT_OPTION": "Black",
+  "USER_LATIN_OPTION": "Latin/Hispanic",
+  "USER_EAST_INDIAN_OPTION": "East Indian",
+  "USER_MIDDLE_EASTERN_OPTION": "Middle Eastern",
+  "USER_MIXED_OPTION": "Mixed",
+  "USER_NATIVE_AMERICAN_OPTION": "Native American",
+  "USER_PACIFIC_ISLANDER_OPTION": "Pacific Islander",
+  "USER_WHITE_CAUCASIAN_OPTION": "White",
+
+  "USER_BODY_TYPE_LABEL": "Body Type",
+  "USER_SLIM_OPTION": "Slim",
+  "USER_ATHLETIC_OPTION": "Athletic",
+  "USER_AVERAGE_OPTION": "Average",
+  "USER_CURVY_OPTION": "Curvy",
+  "USER_FEW_EXTRA_POUND_OPTION": "Few Extra Pounds",
+  "USER_OVER_WEIGHT_OPTION": "Over Weight",
+
+
+  "USER_OTHER_OPTION": "Other",
+
+
+  "USER_HEIGHT_LABEL": "Height",
+
+  "USER_HAIR_COLOR_LABEL": "Hair Color",
+  "USER_AURURN_OPTION": "Aururn",
+  "USER_BLACK_OPTION": "Black",
+  "USER_BLONDE_OPTION": "Blonde",
+  "USER_LIGHT_BROWN_OPTION": "Light Brown",
+  "USER_DARK_BROWN_OPTION": "Dark Brown",
+  "USER_GREY_OPTION": "Grey",
+  "USER_RED_OPTION": "Red",
+  "USER_WHITE_OPTION": "White",
+
+  "USER_OCCUPATION_PLACEHOLDER": "Occupation",
+
+  "USER_ANNUAL_INCOME_LABEL": "Annual Income",
+  "USER_NET_WORTH_LABEL": "Net Worth",
+
+  "USER_DEGREE_LABEL": "Degree",
+  "USER_HIGH_SCHOOL_OPTION": "High School",
+  "USER_SOME_COLLEGE_OPTION": "Some College",
+  "USER_ASSOCIATE_DEGREE_OPTION": "Associate Degree",
+  "USER_BACHELORS_DEGREE_OPTION": "Bachelors Degree",
+  "USER_GRADUATE_DEGREE_OPTION" : "Graduate Degree",
+  "USER_PHD_POST_DOCTRAL_OPTION": "PHD/Post Doctral",
+
+  "USER_SMOKING_LABEL": "Smoking",
+  "USER_NON_SMOKER_OPTION": "Non Smoker",
+  "USER_SOCIAL_SMOKER_OPTION": "Social Smoker",
+  "USER_HEAVY_SMOKER_OPTION": "Heavy Smoker",
+
+  "USER_DRINKING_LABEL": "Drinking",
+  "USER_NON_DRINKER_OPTION": "Non Drinker",
+  "USER_SOCIAL_DRINKER_OPTION": "Social Drinker",
+  "USER_HEAVY_DRINKER_OPTION": "Heavy Drinker",
+
+  "USER_CHILDREN_LABEL": "Children",
+  "USER_PREFER_NOT_TO_SAY_OPTION": "Prefer Not To Say",
+  "USER_NO_CHILDREN_OPTION": "No Children",
+  "USER_1_PLUS_OPTION": "1+",
+  "USER_2_PLUS_OPTION": "2+",
+  "USER_3_PLUS_OPTION": "3+",
+
+  "USER_RELATIONSHIP_LABEL": "Relationship",
+  "USER_SINGLE_OPTION": "Single",
+  "USER_DIVORCED_OPTION": "Divorced",
+  "USER_SEPARATED_OPTION": "Separated",
+  "USER_MARRIED_BUT_LOOKING_OPTION": "Married But Looking",
+  "USER_OPEN_RELATIONSHIP_OPTION": "Open Relationship",
+  "USER_WIDOW_OPTION": "Widow",
+
+  "USER_SUMMARY_PLACEHOLDER": "Summary",
+  "USER_IDEAL_RELATIONSHIP_PLACEHOLDER": "Ideal Relationship",
+
+  "UPLOAD_PROFILE_PICTURE" : "Upload a profile picture",
+  "DONE_BUTTON" : "Done",
+  "CANCEL_BUTTON" : "Cancel",
+  "DELETE_BUTTON" : "delete",
+  "CLOSE_BUTTON" : "close",
+  "CHECK_BUTTON" : "check",
+  "CLOUD_UPLOAD_BUTTON" : "cloud_upload",
+
+  "CARDS_TITLE": "Social",
+
+  "SEARCH_TITLE": "Search",
+  "SEARCH_PLACEHOLDER" : "Search the items list, e.g. \"Donald Duck\""
+}
