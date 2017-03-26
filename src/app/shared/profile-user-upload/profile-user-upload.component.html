@@ -7,7 +7,7 @@
             </button>
         </div>
         <div class="col text-center">
-            <button md-mini-fab (click)="handleUploadImage()">next</button>
+            <button md-mini-fab (click)="handleNext()">next</button>
         </div>
 
     </div>
@@ -21,12 +21,12 @@
         <md-card-content>
             <md-list>
                 <md-list-item>
-                    <md-select name="gender" placeholder="I am a" (change)="handleUserGenderSelect($event)">
-                        <md-option [value]="gender" *ngFor="let gender of genders"> {{gender}}</md-option>
+                    <md-select name="gender" [placeholder]="'USER_GENDER_LABEL' | translate" (change)="handleUserGenderSelect($event)">
+                        <md-option [value]="gender" *ngFor="let gender of genders"> {{gender | translate}}</md-option>
                     </md-select>
                 </md-list-item>
                 <md-list-item>
-                    <md-select name="accountType" placeholder="I want to" (change)="handleProfileTypeSelect($event)">
+                    <md-select name="accountType" [placeholder]="'ACCOUNT_TYPE_LABEL' | translate" (change)="handleProfileTypeSelect($event)">
                         <md-option [value]="type" *ngFor="let type of accountTypes;">{{ type }}</md-option>
                     </md-select>
                 </md-list-item>

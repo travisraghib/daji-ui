@@ -7,6 +7,8 @@ import { FirebaseService } from '../../service/firebase/firebase.service';
 import { ImageUploadService } from '../../service/image/image-upload.service';
 import { CROPPER_OPTIONS } from '../../app.constants';
 
+import { ProfileUploadComponent } from '../profile-upload/profile-upload.component'
+
 declare var Cropper :any;
 
 @Component({
@@ -14,7 +16,7 @@ declare var Cropper :any;
   templateUrl: './profile-photo-upload.component.html',
   styleUrls: ['./profile-photo-upload.component.scss']
 })
-export class ProfilePhotoUploadComponent implements OnInit {
+export class ProfilePhotoUploadComponent extends ProfileUploadComponent {
   private URL = window.URL;
   private file;
   private blob;
@@ -24,19 +26,16 @@ export class ProfilePhotoUploadComponent implements OnInit {
   private forceCrop;
   
   constructor(
+    location : Location,
+    navService : NavService,
     private router: Router,
-    private location : Location,
     private changeDetector : ChangeDetectorRef,
     private firebaseService : FirebaseService,
-    private navService : NavService,
     private imageUploadService : ImageUploadService
   ) {
-    this.navService.hiding.next(true);
+    super(navService, location);
   }
 
-  ngOnInit() {
-  }
-  
   handleImageSelect(event, imgRef){
     this.file = event.srcElement.files[0];
     this.selectedImage = this.URL.createObjectURL(this.file);
@@ -63,6 +62,7 @@ export class ProfilePhotoUploadComponent implements OnInit {
       this.changeDetector.detectChanges();
     });
   }
+  
   handleCancelCrop(imgRef){
     this.croppedImage = null;
     this.selectedImage = this.URL.createObjectURL(this.file);
@@ -80,13 +80,4 @@ export class ProfilePhotoUploadComponent implements OnInit {
       })
       .catch(err => console.log(err));
   }
-  
-  back(){
-    this.location.back();
-  }
-  
-  ngOnDestroy(){
-    this.navService.hiding.next(false);
-  }
-
 }

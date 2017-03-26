@@ -22,7 +22,7 @@ import { ProfileAboutUploadComponent } from './profile-about-upload/profile-abou
     AlertComponent,
     ProfilePhotoUploadComponent,
     ProfileUserUploadComponent,
-    ProfileAboutUploadComponent
+    ProfileAboutUploadComponent,
   ],
   exports: [
     NavigationComponent,

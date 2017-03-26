@@ -1,11 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { NavService } from '../../service/nav/nav.service';
+
+import { ProfileUploadComponent } from '../profile-upload/profile-upload.component'
 
 @Component({
   selector    : 'app-profile-about-upload',
   templateUrl : './profile-about-upload.component.html',
   styleUrls   : [ './profile-about-upload.component.scss' ]
 })
-export class ProfileAboutUploadComponent implements OnInit {
+export class ProfileAboutUploadComponent extends ProfileUploadComponent {
   private ethnicities : string[] = [
     'USER_ASIAN_OPTION',
     'USER_BLACK_AFRICAN_DESCENT_OPTION',
@@ -36,9 +42,12 @@ export class ProfileAboutUploadComponent implements OnInit {
     'USER_OTHER_OPTION'
   ];
   
-  constructor () { }
-  
-  ngOnInit () {
+  constructor (
+    location : Location,
+    navService : NavService,
+    private router: Router,
+  ) {
+    super(navService, location);
   }
   
 }

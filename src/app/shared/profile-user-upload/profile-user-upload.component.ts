@@ -1,14 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 import { NavService } from '../../service/nav/nav.service';
+
+import { ProfileUploadComponent } from '../profile-upload/profile-upload.component'
 
 @Component({
   selector: 'app-profile-user-upload',
   templateUrl: './profile-user-upload.component.html',
   styleUrls: ['./profile-user-upload.component.scss']
 })
-export class ProfileUserUploadComponent implements OnInit {
+export class ProfileUserUploadComponent extends ProfileUploadComponent {
   private accountTypes : string[]   = [ 'Be taken care of', 'Take care of someone' ];
   private seekingGenders : string[] = [ 'Men', 'Women', 'Transgenders' ];
   private genders : string[]        = [ 'Man', 'Woman', 'Transgender' ];
@@ -16,22 +19,14 @@ export class ProfileUserUploadComponent implements OnInit {
   private selectedGenders = { MEN : false, WOMEN : false, TRANSGENDERS : false };
   
   constructor(
-    private navService : NavService,
-    private location : Location,
-  ) { }
+    location : Location,
+    navService : NavService,
+    private router: Router
+  ) {
+    super(navService, location);
+  
+  }
 
-  ngOnInit() {
-    this.navService.hiding.next(true);
-  }
-  
-  ngOnDestroy(){
-    this.navService.hiding.next(false);
-  }
-  
-  back(){
-    this.location.back();
-  }
-  
   handleUserGenderSelect(event){
     console.log(event);
   }
@@ -45,4 +40,7 @@ export class ProfileUserUploadComponent implements OnInit {
     console.log(event);
   }
   
+  handleNext(){
+    this.router.navigate(['/profile/create/about']);
+  }
 }
