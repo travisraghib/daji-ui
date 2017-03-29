@@ -1,46 +1,58 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
-
+import { ProfileUploadComponent } from '../profile-upload/profile-upload.component';
 import { NavService } from '../../service/nav/nav.service';
-
-import { ProfileUploadComponent } from '../profile-upload/profile-upload.component'
+import { UserDataService } from '../../service/user/user-data.service';
 
 @Component({
-  selector: 'app-profile-user-upload',
-  templateUrl: './profile-user-upload.component.html',
-  styleUrls: ['./profile-user-upload.component.scss']
+  selector    : 'app-profile-user-upload',
+  templateUrl : './profile-user-upload.component.html',
+  styleUrls   : [ './profile-user-upload.component.scss' ]
 })
 export class ProfileUserUploadComponent extends ProfileUploadComponent {
-  private accountTypes : string[]   = [ 'Be taken care of', 'Take care of someone' ];
+  private accountTypes = [
+    {
+      label : 'BABY',
+      value : 'baby'
+    },
+    {
+      label : 'DADDY',
+      value : 'daddy'
+    }
+  ];
   private seekingGenders : string[] = [ 'Men', 'Women', 'Transgenders' ];
   private genders : string[]        = [ 'Man', 'Woman', 'Transgender' ];
+  private selectedGenders = { Men : false, Women : false, Transgenders: false };
   
-  private selectedGenders = { MEN : false, WOMEN : false, TRANSGENDERS : false };
-  
-  constructor(
+  constructor (
     location : Location,
     navService : NavService,
-    private router: Router
+    private router : Router,
+    private userDataService : UserDataService
   ) {
     super(navService, location);
-  
-  }
-
-  handleUserGenderSelect(event){
-    console.log(event);
+    
   }
   
-  handleSeekingGenderSelect(gender, event){
-    console.log(gender);
-    console.log(event);
+  handleUserGenderSelect (event) {
+    const gender = event.value
+    this.userDataService.handleUpdateProfile({ gender });
   }
   
-  handleProfileTypeSelect(event){
-    console.log(event);
+  handleSeekingGenderSelect (gender, event) {
+    console.log(gender)
+    console.log(event.checked)
+    this.selectedGenders[gender] = event.checked;
+    this.userDataService.handleUpdateProfile({ seeking : this.selectedGenders});
   }
   
-  handleNext(){
-    this.router.navigate(['/profile/create/about']);
+  handleProfileTypeSelect (event) {
+    const type = event.value
+    this.userDataService.handleUpdateProfile({ type });
+  }
+  
+  handleNext () {
+    this.router.navigate([ '/profile/create/about' ]);
   }
 }

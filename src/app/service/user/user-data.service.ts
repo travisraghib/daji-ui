@@ -27,7 +27,7 @@ export class UserDataService {
     this.auth = this.firebaseService.auth;
     this.firebaseService.user.subscribe(user => {
       this.user = user
-      if(!user) this.sessionStorageService.set('user', user);
+      if (!user) this.sessionStorageService.set('user', user);
     });
   }
   
@@ -64,11 +64,7 @@ export class UserDataService {
   handleLogin (res) {
     this.alertService.dismiss.next({})
     return this.firebaseService.token
-               .then(idToken => {
-                 return this.http
-                            .post(`${USER_API}/auth`, { idToken })
-                            .toPromise()
-               });
+               .then(idToken => this.http.post(`${USER_API}/auth`, { idToken }).toPromise());
   }
   
   handleAuthError (error) {
@@ -77,12 +73,17 @@ export class UserDataService {
     return Promise.reject(error);
   }
   
-  handleProfileUpload (url) {
-    return this.firebaseService.token
-               .then(idToken => {
-                 return this.http
-                            .post(`${USER_API}/profile/image`, { idToken, url })
-                            .toPromise()
-               });
+  generateRequest (cb){
+    return this.firebaseService.token.then(idToken => cb(idToken));
   }
+  
+  handleProfileUpload (url) {
+    return this.generateRequest((idToken) => this.http.post(`${USER_API}/profile/image`, { idToken, url }).toPromise());
+  }
+  
+  handleUpdateProfile (data) {
+    return this.generateRequest((idToken) => this.http.patch(`${USER_API}/profile`, { idToken, data}).toPromise())
+  }
+  
+  
 }

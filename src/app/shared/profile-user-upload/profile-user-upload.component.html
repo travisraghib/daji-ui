@@ -25,12 +25,12 @@
                         <md-option [value]="gender" *ngFor="let gender of genders"> {{gender | translate}}</md-option>
                     </md-select>
                 </md-list-item>
-                <md-list-item>
+                <md-list-item class="mt-3">
                     <md-select name="accountType" [placeholder]="'ACCOUNT_TYPE_LABEL' | translate" (change)="handleProfileTypeSelect($event)">
-                        <md-option [value]="type" *ngFor="let type of accountTypes;">{{ type }}</md-option>
+                        <md-option [value]="type.value" *ngFor="let type of accountTypes;">{{ type.label | translate }}</md-option>
                     </md-select>
                 </md-list-item>
-                <md-list-item>
+                <md-list-item class="mt-3">
                     {{ 'USER_SEEKING_LABEL' | translate }}
                 </md-list-item>
                 <md-list-item *ngFor="let gender of seekingGenders">
