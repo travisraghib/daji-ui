@@ -20,21 +20,29 @@
     <md-card-content>
       <md-list>
         <md-list-item>
-          <md-select name="ethnicity" placeholder="Ethnicity" (change)="handleUserInput('ethnicity',$event)">
-            <md-option [value]="ethnicity" *ngFor="let ethnicity of ethnicities">{{ ethnicity }}
-            </md-option>
-          </md-select>
-        </md-list-item>
-        <md-list-item>
           <md-input-container>
-            <input mdInput placeholder="Height(cm)" value="">
+            <input mdInput [placeholder]="'USER_AGE_LABEL' | translate" value="" (blur)="handleUserInput('age',$event.target.value)">
           </md-input-container>
         </md-list-item>
         <md-list-item>
-          I am seeking:
+          <md-input-container>
+            <input mdInput [placeholder]="'USER_HEIGHT_LABEL' | translate" value="" (blur)="handleHeightChange('height',$event.target.value)">
+          </md-input-container>
         </md-list-item>
-        <md-list-item *ngFor="let gender of seekingGenders">
-          <md-checkbox (change)="handleSeekingGenderSelect(gender, $event)">{{gender}}</md-checkbox>
+        <md-list-item>
+          <md-select name="ethnicity" [placeholder]="'USER_ETHNICITY_LABEL' | translate" (change)="handleUserInput('ethnicity',$event.value.value)">
+            <md-option [value]="ethnicity" *ngFor="let ethnicity of ethnicities">{{ ethnicity.label | translate}}</md-option>
+          </md-select>
+        </md-list-item>
+        <md-list-item>
+          <md-select name="bodyType" [placeholder]="'USER_BODY_TYPE_LABEL' | translate"  (change)="handleUserInput('bodyType',$event.value.value)">
+            <md-option [value]="bodyType" *ngFor="let bodyType of bodyTypes">{{ bodyType.label | translate }}</md-option>
+          </md-select>
+        </md-list-item>
+        <md-list-item>
+          <md-select name="hairColor" [placeholder]="'USER_HAIR_COLOR_LABEL' | translate" (change)="handleUserInput('hariColor',$event.value.value)">
+            <md-option [value]="hariColor" *ngFor="let hariColor of hariColors">{{ hariColor.label | translate }}</md-option>
+          </md-select>
         </md-list-item>
       </md-list>
     </md-card-content>
