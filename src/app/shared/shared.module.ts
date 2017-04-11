@@ -7,9 +7,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { DrawerComponent } from './navigation/drawer/drawer.component';
 import { AlertComponent } from './alert/alert.component';
 import { ProfilePhotoUploadComponent } from './profile-photo-upload/profile-photo-upload.component';
-import { ProfileUserUploadComponent } from './profile-user-upload/profile-user-upload.component';
+import { ProfileBasicUploadComponent } from './profile-basic-upload/profile-basic-upload.component';
 import { ProfileAboutUploadComponent } from './profile-about-upload/profile-about-upload.component';
-
+ 
 @NgModule({
   imports: [
     CommonModule,
@@ -21,7 +21,7 @@ import { ProfileAboutUploadComponent } from './profile-about-upload/profile-abou
     DrawerComponent,
     AlertComponent,
     ProfilePhotoUploadComponent,
-    ProfileUserUploadComponent,
+    ProfileBasicUploadComponent,
     ProfileAboutUploadComponent,
   ],
   exports: [
@@ -29,7 +29,7 @@ import { ProfileAboutUploadComponent } from './profile-about-upload/profile-abou
     DrawerComponent,
     AlertComponent,
     ProfilePhotoUploadComponent,
-    ProfileUserUploadComponent,
+    ProfileBasicUploadComponent,
     ProfileAboutUploadComponent
   ]
 })

@@ -7,8 +7,9 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CreateComponent } from './pages/profile/create/create.component';
 import { PhotoComponent } from './pages/profile/create/photo/photo.component';
-import { UserComponent } from './pages/profile/create/user/user.component';
 import { AboutComponent } from './pages/profile/create/about/about.component';
+import { BasicInfoComponent } from './pages/profile/create/basic-info/basic-info.component';
+import { UserComponent } from './pages/profile/create/user/user.component';
 
 export const appRoutes : Routes = [
   {
@@ -46,16 +47,19 @@ export const appRoutes : Routes = [
             component : PhotoComponent
           },
           {
-            path : 'user',
-            component : UserComponent
+            path : 'basic',
+            component : BasicInfoComponent,
           },
           {
             path : 'about',
             component : AboutComponent
+          },
+          {
+            path : 'user',
+            component : UserComponent
           }
-          
         ]
-      },
+      }
     ]
   },
   {

@@ -6,11 +6,11 @@ import { NavService } from '../../service/nav/nav.service';
 import { UserDataService } from '../../service/user/user-data.service';
 
 @Component({
-  selector    : 'app-profile-user-upload',
-  templateUrl : './profile-user-upload.component.html',
-  styleUrls   : [ './profile-user-upload.component.scss' ]
+  selector    : 'app-profile-basic-upload',
+  templateUrl : 'profile-basic-upload.component.html',
+  styleUrls   : [ 'profile-basic-upload.component.scss' ]
 })
-export class ProfileUserUploadComponent extends ProfileUploadComponent {
+export class ProfileBasicUploadComponent extends ProfileUploadComponent {
   private accountTypes = [
     {
       label : 'BABY',

@@ -13,12 +13,9 @@ import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CreateComponent } from './profile/create/create.component';
 import { PhotoComponent } from './profile/create/photo/photo.component';
-import { UserComponent } from './profile/create/user/user.component';
 import { AboutComponent } from './profile/create/about/about.component';
-
-
-
-
+import { BasicInfoComponent } from './profile/create/basic-info/basic-info.component';
+import { UserComponent } from './profile/create/user/user.component';
 
 @NgModule({
   imports: [
@@ -36,8 +33,9 @@ import { AboutComponent } from './profile/create/about/about.component';
     ProfileComponent,
     CreateComponent,
     PhotoComponent,
-    UserComponent,
-    AboutComponent
+    AboutComponent,
+    BasicInfoComponent,
+    UserComponent
   ],
   exports : [
     NotFoundComponent,
@@ -47,8 +45,8 @@ import { AboutComponent } from './profile/create/about/about.component';
     ProfileComponent,
     CreateComponent,
     PhotoComponent,
-    UserComponent,
-    AboutComponent
+    AboutComponent,
+    BasicInfoComponent
   ]
 })
 export class PagesModule { }

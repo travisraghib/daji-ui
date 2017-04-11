@@ -67,6 +67,7 @@
   "NOVEMBER_OPTION": "November",
   "DECEMBER_OPTION": "December",
 
+  "BASIC_INFO" : "Basic Info",
   "USER_PROFILE" : "User Profile",
   "USER_CREATE_TITLE": "Register",
   "USER_CREATE_CHOOSE_IMAGE": "Add Image",
